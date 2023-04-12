@@ -1,0 +1,4 @@
+<div *ngIf="notification.show" class="notification {{ notification.notificationType }}">
+	<p class="notification-title">{{ notification.title }}</p>
+	<p class="notification-instruction" [innerHTML]="notification.message"></p>
+</div>

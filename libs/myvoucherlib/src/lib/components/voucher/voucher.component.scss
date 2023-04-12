@@ -1,0 +1,122 @@
+.voucher {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(243,243,243);
+  padding: 15px;
+  border: 1px solid rgb(231,231,231);
+}
+
+.voucher-value {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.voucher-text {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.voucher-validity {
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+
+  span {
+    color: rgb(148,148,148);
+    margin-right: 5px;
+    white-space: nowrap;
+  }
+}
+
+.voucher-instruction {
+  font-style: italic;
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: center;
+
+  span {
+    font-weight: bold;
+  }
+}
+
+.voucher-management {
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+button {
+  background-color: rgb(249,187,24);
+  color: #000;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 8px 32px;
+  border: none;
+  cursor: pointer;
+}
+
+.further-info {
+  font-size: 12px;
+}
+
+.venues-list-title {
+  margin-bottom: 5px;
+}
+
+.venues-header,
+.venue-item {
+  display: flex;
+  border: 1px solid rgb(231,231,231);
+}
+
+.venues-header {
+  background-color:  rgb(243,243,243);
+  font-weight: bold;
+  text-align: left;
+}
+
+.header-item,
+.venue-item > div {
+  flex: 1;
+  padding: 8px;
+  border-left: 1px solid rgb(231,231,231);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  font-size: 12px;
+}
+
+.header-item:first-child,
+.venue-item > div:first-child {
+  flex: 1 1 65%;
+  border-left: none;
+}
+
+.header-item:last-child,
+.venue-item > div:last-child {
+  flex: 1 1 35%;
+}
+
+.venue-name {
+  font-weight: bold;
+}
+
+a {
+  color: rgb(52,123,202);
+  text-decoration: none;
+  font-weight: bold;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.opening-hours {
+  text-align: left;
+}

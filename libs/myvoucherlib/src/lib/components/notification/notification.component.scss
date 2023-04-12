@@ -1,0 +1,32 @@
+.notification {
+  border: 1px solid rgb(231,231,231);
+  padding: 15px 10px;
+  font-size: 14px;
+  margin-bottom: 1rem;
+
+  .notification-title {
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 5px;
+  }
+
+  .notification-instruction {
+    margin: 0;
+    span {
+      font-weight: bold;
+    }
+  }
+
+  &.success {
+    border-left: 5px solid rgb(78,185,14);
+    .notification-title {
+      color: rgb(102,195,43);
+    }
+  }
+  &.error {
+    border-left: 5px solid red;
+    .notification-title {
+      color: red;
+    }
+  }
+}

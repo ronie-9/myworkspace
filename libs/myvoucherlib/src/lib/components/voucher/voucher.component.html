@@ -1,0 +1,47 @@
+<div *ngIf="!voucher.voucherData.purchaseID">
+	<div class="voucher">
+		<div class="voucher-value">
+			{{ voucher.voucherData.voucherAmount | currency:voucher.voucherData.currency:'symbol':'1.2-2' | slice:0:1 }} {{ voucher.voucherData.voucherAmount | currency:voucher.voucherData.currency:'symbol':'1.2-2' | slice:1 }}
+		</div>
+		<div class="voucher-text">Cash in voucher</div>
+		<div class="voucher-validity"><span>Valid for:</span> 24 hours</div>
+		<div class="voucher-instruction">
+			You will receive your QR code in the next step and will be also e-mailed to <span>{{ voucher.voucherData.userEmail }}</span>!
+		</div>
+		<button (click)="purchaseVoucher()">PURCHASE VOUCHER</button>
+	</div>
+	<p class="further-info">For further information please check the <a href="">guide on Cashin vouchers</a></p>
+
+	<p class="venues-list-title"><b>Find a location</b></p>
+	<div class="venues-list" *ngIf="voucher.venues">
+		<div class="venues-header">
+			<div class="header-item name-adress">Name & Address</div>
+			<div class="header-item">Opening Hours</div>
+		</div>
+		<div *ngFor="let venue of voucher.venues" class="venue-item">
+			<div>
+				<div class="venue-name">{{venue.name}}</div>
+				<div>{{venue.address}}</div>
+				<div>{{venue.postcode}}, {{venue.city}}</div>
+				<a href="https://www.google.com/maps/search/?api=1&query={{venue.lat}},{{venue.lng}}" target="_blank" >View on map</a>
+			</div>
+			<div class="opening-hours">{{venue.hours}}</div>
+		</div>
+	</div>
+</div>
+
+<div *ngIf="voucher.voucherData.purchaseID">
+	<div class="voucher">
+		<div class="voucher-value">
+			{{ voucher.voucherData.voucherAmount | currency:voucher.voucherData.currency:'symbol':'1.2-2' | slice:0:1 }} {{ voucher.voucherData.voucherAmount | currency:voucher.voucherData.currency:'symbol':'1.2-2' | slice:1 }}
+		</div>
+		<div class="voucher-text">Cash in voucher</div>
+		<div class="voucher-validity">
+			<span>Expires in:</span> {{ countdown }}
+		</div>
+		<qrcode [qrdata]="voucher.voucherData.purchaseID" [width]="200" [errorCorrectionLevel]="'M'"></qrcode>
+		<a class="voucher-management" href="">Voucher management</a>
+	</div>
+</div>
+
+
